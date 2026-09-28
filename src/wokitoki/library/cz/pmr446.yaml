@@ -1,0 +1,32 @@
+# PMR446 – 16 analog channels, 12.5 kHz step.
+library: cz/pmr446
+title: "PMR446 (16 channels)"
+country: CZ
+source: "ČTÚ general authorisation VO-R/3/6.2016-9 (check the current version on ctu.gov.cz)"
+legal:
+  tx: restricted
+  max_power_w: 0.5
+  note: >
+    Max. 0.5 W e.r.p. and only equipment with a fixed (non-removable)
+    antenna. Handhelds with a removable antenna and a lowest power of
+    ~1 W (RT-950 Pro, RT-900, UV-K5) do not meet these conditions – only
+    listening is safe. Profiles import PMR446 receive only; switching TX on
+    (--tx on) is at your own responsibility.
+defaults: {mode: FM, bw: narrow, power: low, rx_tone: off, tx_tone: off, scan: true}
+channels:
+  - {name: "PMR 01", rx: 446.00625}
+  - {name: "PMR 02", rx: 446.01875}
+  - {name: "PMR 03", rx: 446.03125}
+  - {name: "PMR 04", rx: 446.04375}
+  - {name: "PMR 05", rx: 446.05625}
+  - {name: "PMR 06", rx: 446.06875}
+  - {name: "PMR 07", rx: 446.08125}
+  - {name: "PMR 08", rx: 446.09375}
+  - {name: "PMR 09", rx: 446.10625}
+  - {name: "PMR 10", rx: 446.11875}
+  - {name: "PMR 11", rx: 446.13125}
+  - {name: "PMR 12", rx: 446.14375}
+  - {name: "PMR 13", rx: 446.15625}
+  - {name: "PMR 14", rx: 446.16875}
+  - {name: "PMR 15", rx: 446.18125}
+  - {name: "PMR 16", rx: 446.19375}

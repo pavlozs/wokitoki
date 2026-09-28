@@ -1,0 +1,30 @@
+# Default configuration of a Quansheng UV-K5 with F4HWN v4.x for the Czech Republic.
+# Applied on top of what the radio holds: settings not listed here, calibration
+# and unknown bytes stay as they are. See docs/FORMATS.md (profiles).
+profile: cz/quansheng-uvk5-f4hwn
+title: "Czech Republic – Quansheng UV-K5 (F4HWN v4)"
+country: CZ
+driver: quansheng-uvk5-f4hwn
+notes:
+  - "No zones: 1–16 PMR446, 21–34 shared VHF/UHF, 41–80 CB 1–40, 81–120 CB 41–80, 121–123 amateur calling."
+  - "PMR446 is receive only by default: it allows at most 0.5 W ERP and only radios with a fixed (non-removable) antenna – this radio meets neither. Switching TX on (--tx on, or tx: on in your own profile) is at your own responsibility."
+  - "Nominal power: PMR low4 = 500 mW (used only if you switch TX on), 5 W channels high = 5 W (the K5 gives less in practice), 1 W channels low5 = 1 W."
+  - "CB and amateur channels are receive only (the K5 stores that as TX lock); F-LOCK DEFAULT+ also allows TX only in 137–174 and 400–470 MHz."
+  - "CB reception needs the wide RX build of F4HWN (18–108 MHz)."
+channels: replace
+blocks:
+  - {start: 1, library: cz/pmr446, power: low4, tx: off, extra: {step: 6.25}}   # receive only – see the notes
+  - {start: 21, library: cz/shared, power_by_limit: {5: high, 1: low5}}
+  - {start: 41, library: cz/cb-cept40, power: low1, tx: off, scan: false, extra: {step: 10}}
+  - {start: 81, library: cz/cb-41-80, power: low1, tx: off, scan: false, extra: {step: 10}}
+  - {start: 121, library: cz/amateur-calling, power: low1, tx: off}
+settings:
+  squelch: 3
+  channel_display: name+freq
+  roger: off
+  ste: true
+  am_fix: true
+  freq_lock: 0                # F-LOCK DEFAULT+: TX only 137–174 and 400–470 MHz
+  user_power: 500mW           # the "user" level stays PMR-safe
+broadcast:
+  fm: {library: cz/fm-praha}  # 20 strongest stations (no names on the K5); pick your region with --fm cz/fm-<city>

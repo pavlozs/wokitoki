@@ -1,0 +1,33 @@
+# Default configuration of a Radtel RT-900 (BT) for the Czech Republic.
+# Applied on top of what the radio holds: settings not listed here, calibration
+# and unknown bytes stay as they are. See docs/FORMATS.md (profiles).
+profile: cz/radtel-rt900
+title: "Czech Republic – Radtel RT-900"
+country: CZ
+driver: radtel-rt900
+notes:
+  - "No zones: 1–16 PMR446, 21–34 shared VHF/UHF, 41–80 CB 1–40, 81–120 CB 41–80, 121–123 amateur calling."
+  - "Power (CHIRP): High 8 W, Mid 4 W, Low 1 W – 5 W channels use Mid, 1 W channels and PMR use Low."
+  - "PMR446 is receive only by default: it allows at most 0.5 W ERP and only radios with a fixed (non-removable) antenna – this radio meets neither. Switching TX on (--tx on, or tx: on in your own profile) is at your own responsibility."
+  - "CB and amateur channels are receive only (the radio is not type-approved for CB; amateurs need a licence)."
+  - "The RT-900 has an FM radio, but its memories are not in the known memory map – no stations are set."
+channels: replace
+blocks:
+  - {start: 1, library: cz/pmr446, power: low, tx: off}   # receive only – see the notes
+  - {start: 21, library: cz/shared, power_by_limit: {5: mid, 1: low}}
+  - {start: 41, library: cz/cb-cept40, power: low, tx: off, scan: false}
+  - {start: 81, library: cz/cb-41-80, power: low, tx: off, scan: false}
+  - {start: 121, library: cz/amateur-calling, power: low, tx: off}
+settings:
+  language: english
+  sql: 4
+  scan_mode: carrier
+  work_mode_a: channel
+  work_mode_b: channel
+  display_mode_a: name
+  display_mode_b: name
+  ptt_id: off
+  dtmf_side_tone: off
+  roger: off
+  tail_noise_clear: true
+  dual_tx: off

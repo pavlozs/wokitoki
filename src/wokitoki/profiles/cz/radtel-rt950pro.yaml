@@ -1,0 +1,37 @@
+# Default configuration of a Radtel RT-950 Pro for the Czech Republic.
+# Applied on top of what the radio holds: settings not listed here, calibration
+# and unknown bytes stay as they are. See docs/FORMATS.md (profiles).
+profile: cz/radtel-rt950pro
+title: "Czech Republic – Radtel RT-950 Pro"
+country: CZ
+driver: radtel-rt950pro
+notes:
+  - "Zones: 1 PMR446, 2 shared VHF/UHF, 3 CB 1–40, 4 CB 41–80, 5 amateur calling."
+  - "The watts of the High/Mid/Low levels are not known for the RT-950 Pro; Mid is used for 5 W channels, Low for 1 W and PMR."
+  - "PMR446 is receive only by default: it allows at most 0.5 W ERP and only radios with a fixed (non-removable) antenna – this radio meets neither. Switching TX on (--tx on, or tx: on in your own profile) is at your own responsibility."
+  - "CB and amateur channels are receive only (the radio is not type-approved for CB; amateurs need a licence)."
+  - "CB (27 MHz) is shown only with the menu Work Band set to 18–64 MHz."
+channels: replace
+blocks:
+  - {zone: 1, start: 1, library: cz/pmr446, power: low, tx: off}   # receive only – see the notes
+  - {zone: 2, start: 1, library: cz/shared, power_by_limit: {5: mid, 1: low}}
+  - {zone: 3, start: 1, library: cz/cb-cept40, power: low, tx: off, scan: false}
+  - {zone: 4, start: 1, library: cz/cb-41-80, power: low, tx: off, scan: false}
+  - {zone: 5, start: 1, library: cz/amateur-calling, power: low, tx: off}
+settings:
+  language: english
+  sql: 4
+  scan_mode: carrier          # resume when the signal drops – good for PMR and shared channels
+  work_mode_a: channel
+  work_mode_b: channel
+  work_mode_c: channel
+  display_mode_a: name
+  display_mode_b: name
+  current_zone_a: 1           # PMR
+  current_zone_b: 2           # shared VHF/UHF
+  ptt_id: off                 # no DTMF identification on licence-free channels
+  dtmf_mode: off
+  sound_tx_end: false         # no roger beep
+  tail_noise_clear: true
+broadcast:
+  fm: {library: cz/fm-praha, names: true}   # 16 strongest stations; pick your region with --fm cz/fm-<city>

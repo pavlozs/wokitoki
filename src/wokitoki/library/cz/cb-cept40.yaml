@@ -1,0 +1,53 @@
+# CB 27 MHz – channels 1–40 (CEPT). The order of 23/24/25 is irregular on purpose.
+library: cz/cb-cept40
+title: "CB – 40 CEPT channels"
+country: CZ
+source: "ČTÚ general authorisation VO-R/7/11.2016-12 (check the current version on ctu.gov.cz)"
+legal:
+  tx: allowed
+  max_power_w: 4          # FM/AM 4 W e.r.p., SSB 12 W PEP (channels 1–40)
+  note: >
+    The Radtel RT-950 Pro transmits only FM on 27 MHz (3–4 W); the channels
+    are shown only with Work Band 18–64 MHz or in section C in All Band mode.
+defaults: {mode: FM, bw: narrow, power: mid, rx_tone: off, tx_tone: off, scan: true}
+channels:
+  - {name: "CB 01", rx: 26.965}
+  - {name: "CB 02", rx: 26.975}
+  - {name: "CB 03", rx: 26.985}
+  - {name: "CB 04", rx: 27.005}
+  - {name: "CB 05", rx: 27.015}
+  - {name: "CB 06", rx: 27.025}
+  - {name: "CB 07", rx: 27.035}
+  - {name: "CB 08", rx: 27.055}
+  - {name: "CB 09", rx: 27.065}   # traditionally the emergency channel
+  - {name: "CB 10", rx: 27.075}
+  - {name: "CB 11", rx: 27.085}
+  - {name: "CB 12", rx: 27.105}
+  - {name: "CB 13", rx: 27.115}
+  - {name: "CB 14", rx: 27.125}
+  - {name: "CB 15", rx: 27.135}
+  - {name: "CB 16", rx: 27.155}
+  - {name: "CB 17", rx: 27.165}
+  - {name: "CB 18", rx: 27.175}
+  - {name: "CB 19", rx: 27.185}   # traditionally road traffic
+  - {name: "CB 20", rx: 27.205}
+  - {name: "CB 21", rx: 27.215}
+  - {name: "CB 22", rx: 27.225}
+  - {name: "CB 23", rx: 27.255}
+  - {name: "CB 24", rx: 27.235}
+  - {name: "CB 25", rx: 27.245}
+  - {name: "CB 26", rx: 27.265}
+  - {name: "CB 27", rx: 27.275}
+  - {name: "CB 28", rx: 27.285}
+  - {name: "CB 29", rx: 27.295}
+  - {name: "CB 30", rx: 27.305}
+  - {name: "CB 31", rx: 27.315}
+  - {name: "CB 32", rx: 27.325}
+  - {name: "CB 33", rx: 27.335}
+  - {name: "CB 34", rx: 27.345}
+  - {name: "CB 35", rx: 27.355}
+  - {name: "CB 36", rx: 27.365}
+  - {name: "CB 37", rx: 27.375}
+  - {name: "CB 38", rx: 27.385}
+  - {name: "CB 39", rx: 27.395}
+  - {name: "CB 40", rx: 27.405}

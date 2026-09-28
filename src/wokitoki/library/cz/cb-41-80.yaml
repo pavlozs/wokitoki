@@ -1,0 +1,51 @@
+# CB 27 MHz – channels 41–80 (26.565–26.955 MHz, 10 kHz step), FM only.
+library: cz/cb-41-80
+title: "CB – channels 41–80"
+country: CZ
+source: "ČTÚ general authorisation VO-R/7/11.2016-12 (check the current version on ctu.gov.cz)"
+legal:
+  tx: allowed
+  max_power_w: 4          # FM only
+  note: "Channels 41–80 are allowed for FM only."
+defaults: {mode: FM, bw: narrow, power: mid, rx_tone: off, tx_tone: off, scan: true}
+channels:
+  - {name: "CB 41", rx: 26.565}
+  - {name: "CB 42", rx: 26.575}
+  - {name: "CB 43", rx: 26.585}
+  - {name: "CB 44", rx: 26.595}
+  - {name: "CB 45", rx: 26.605}
+  - {name: "CB 46", rx: 26.615}
+  - {name: "CB 47", rx: 26.625}
+  - {name: "CB 48", rx: 26.635}
+  - {name: "CB 49", rx: 26.645}
+  - {name: "CB 50", rx: 26.655}
+  - {name: "CB 51", rx: 26.665}
+  - {name: "CB 52", rx: 26.675}
+  - {name: "CB 53", rx: 26.685}
+  - {name: "CB 54", rx: 26.695}
+  - {name: "CB 55", rx: 26.705}
+  - {name: "CB 56", rx: 26.715}
+  - {name: "CB 57", rx: 26.725}
+  - {name: "CB 58", rx: 26.735}
+  - {name: "CB 59", rx: 26.745}
+  - {name: "CB 60", rx: 26.755}
+  - {name: "CB 61", rx: 26.765}
+  - {name: "CB 62", rx: 26.775}
+  - {name: "CB 63", rx: 26.785}
+  - {name: "CB 64", rx: 26.795}
+  - {name: "CB 65", rx: 26.805}
+  - {name: "CB 66", rx: 26.815}
+  - {name: "CB 67", rx: 26.825}
+  - {name: "CB 68", rx: 26.835}
+  - {name: "CB 69", rx: 26.845}
+  - {name: "CB 70", rx: 26.855}
+  - {name: "CB 71", rx: 26.865}
+  - {name: "CB 72", rx: 26.875}
+  - {name: "CB 73", rx: 26.885}
+  - {name: "CB 74", rx: 26.895}
+  - {name: "CB 75", rx: 26.905}
+  - {name: "CB 76", rx: 26.915}
+  - {name: "CB 77", rx: 26.925}
+  - {name: "CB 78", rx: 26.935}
+  - {name: "CB 79", rx: 26.945}
+  - {name: "CB 80", rx: 26.955}

@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wokitoki"
+version = "0.1.0"
+description = "Command line programmer for handheld radios (Bluetooth LE / USB), configuration in YAML"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [{ name = "Pavel Duron" }]
+keywords = ["ham radio", "amateur radio", "walkie-talkie", "codeplug", "radio programming", "bluetooth le",
+            "radtel", "quansheng", "uv-k5", "pmr446", "chirp"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Communications :: Ham Radio",
+]
+dependencies = [
+    "bleak>=0.22",
+    "pyserial>=3.5",
+    "typer>=0.12",
+    "rich>=13",
+    "ruamel.yaml>=0.18",
+    "platformdirs>=4",
+]
+
+[project.urls]
+Homepage = "https://github.com/pavlozs/wokitoki"
+Documentation = "https://github.com/pavlozs/wokitoki/tree/main/docs"
+Issues = "https://github.com/pavlozs/wokitoki/issues"
+Changelog = "https://github.com/pavlozs/wokitoki/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "ruff>=0.16"]
+
+[project.scripts]
+wokitoki = "wokitoki.cli:run"
+
+# Radio drivers – external packages register under the same group.
+[project.entry-points."wokitoki.drivers"]
+radtel-rt950pro = "wokitoki.drivers.radtel.rt950pro:RT950Pro"
+radtel-rt900 = "wokitoki.drivers.radtel.rt900:RT900"
+quansheng-uvk5-f4hwn = "wokitoki.drivers.quansheng.uvk5:UVK5F4HWN"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/wokitoki"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [".github", ".venv"]

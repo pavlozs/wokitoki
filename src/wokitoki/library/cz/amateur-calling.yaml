@@ -1,0 +1,13 @@
+# Amateur bands 2 m / 70 cm – FM calling frequencies and APRS (IARU Region 1).
+library: cz/amateur-calling
+title: "Radio amateurs – FM calling frequencies and APRS"
+country: CZ
+source: "IARU Region 1 band plan; check the current ČRK band plan (crk.cz)"
+legal:
+  tx: licence
+  note: "Only holders of a HAREC / NOVICE licence may transmit. Receive only without a licence."
+defaults: {mode: FM, bw: wide, power: mid, rx_tone: off, tx_tone: off, scan: true}
+channels:
+  - {name: "2m CALL", rx: 145.500}
+  - {name: "APRS", rx: 144.800, scan: false}
+  - {name: "70cm CALL", rx: 433.500}

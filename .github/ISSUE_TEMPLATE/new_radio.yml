@@ -1,0 +1,24 @@
+name: New radio
+description: Ask for (or offer to help with) support of another radio
+labels: [new radio]
+body:
+  - type: input
+    id: radio
+    attributes:
+      label: Radio, firmware and connection
+      placeholder: Baofeng UV-17Pro GPS, BLE and cable
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Known sources
+      description: CHIRP driver, vendor software, documentation of the protocol or memory map …
+  - type: checkboxes
+    id: help
+    attributes:
+      label: I can help with
+      options:
+        - label: testing on my radio
+        - label: backups (.img) before/after a single change in the radio menu
+        - label: writing the driver

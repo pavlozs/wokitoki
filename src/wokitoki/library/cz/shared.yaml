@@ -1,0 +1,29 @@
+# Czech shared frequencies (VHF/UHF) – licence-free, with power limits.
+library: cz/shared
+title: "Shared frequencies (VHF 172–173 MHz, UHF 442/448/449 MHz)"
+country: CZ
+source: >
+  ČTÚ general authorisation VO-R/16 (shared frequencies); list per
+  forum.svysilackou.cz and kmitocty.cz – check the current version on ctu.gov.cz
+legal:
+  tx: allowed
+  note: "Power is limited per channel (1 W / 5 W), see max_power_w of the channel."
+defaults: {mode: FM, bw: narrow, rx_tone: off, tx_tone: off, scan: true}
+channels:
+  - {name: "VHF 1", rx: 172.650, max_power_w: 5, power: mid}
+  - {name: "VHF 2", rx: 172.725, max_power_w: 1, power: low}
+  - {name: "VHF 3", rx: 172.950, max_power_w: 5, power: mid}
+  - {name: "VHF 4", rx: 172.975, max_power_w: 5, power: mid}
+  - {name: "VHF 5", rx: 173.050, max_power_w: 1, power: low}
+  - {name: "UHF 1", rx: 448.490, max_power_w: 5, power: mid}
+  - {name: "UHF 2", rx: 448.570, max_power_w: 5, power: mid}
+  - {name: "UHF 3", rx: 448.610, max_power_w: 5, power: mid}
+  - {name: "UHF 4", rx: 449.770, max_power_w: 1, power: low}
+  - {name: "UHF 5", rx: 449.810, max_power_w: 1, power: low}
+  - {name: "442-1", rx: 442.200, max_power_w: 5, power: mid}
+  - {name: "442-2", rx: 442.225, max_power_w: 5, power: mid}
+  - {name: "442-3", rx: 442.250, max_power_w: 5, power: mid}
+  - {name: "442-4", rx: 442.275, max_power_w: 5, power: mid}
+# More 1 W shared frequencies (34 / 77 / 81 MHz) – on the RT-950 Pro 34 MHz is
+# only in the 18–64 MHz band. Add them once verified that the radio supports them:
+#   34.050 34.075 34.150 34.175 77.025 77.050 77.075 77.100 77.725 78.000 81.725 81.750

@@ -1,0 +1,39 @@
+name: Bug report
+description: Something does not work with a radio or a command
+labels: [bug]
+body:
+  - type: input
+    id: radio
+    attributes:
+      label: Radio and firmware
+      description: Model and firmware version (`wokitoki ping <alias>` shows what the radio reports)
+      placeholder: Radtel RT-950 Pro, firmware V0.24
+    validations:
+      required: true
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Connection
+      options: [Bluetooth LE, USB cable, no radio (file only)]
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system and wokitoki version
+      placeholder: macOS 15, wokitoki 0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The command you ran, what you expected and what you got.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: Run the command with `-v --log wokitoki.log` and paste or attach the log. Remove anything private (call signs, locations) first.
+      render: text
