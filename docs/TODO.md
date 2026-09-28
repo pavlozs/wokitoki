@@ -5,7 +5,7 @@
 - [x] CI (ruff, pytest on macOS/Linux/Windows × Python 3.11–3.13, build), issue/PR templates
 - [x] personal data removed from docs and tests (BLE addresses, location)
 - [x] repository https://github.com/pavlozs/wokitoki in README/CONTRIBUTING and `[project.urls]`
-- [ ] first commit, create the repository, check that CI is green (Windows not tried yet)
+- [x] first commit, public repository, CI green on macOS, Linux and Windows (Python 3.11–3.13)
 - [ ] later: publish on PyPI (trusted publishing from a GitHub release)
 
 ## From the pre-release review (cleanup, no known bugs)
